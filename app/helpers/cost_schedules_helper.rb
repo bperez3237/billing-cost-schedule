@@ -1,0 +1,2 @@
+module CostSchedulesHelper
+end

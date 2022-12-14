@@ -1,0 +1,2 @@
+class CostSchedulesController < ApplicationController
+end
