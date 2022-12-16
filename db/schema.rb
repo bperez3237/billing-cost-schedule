@@ -10,11 +10,11 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2022_12_13_152509) do
+ActiveRecord::Schema[7.0].define(version: 2022_12_16_205205) do
   create_table "activities", force: :cascade do |t|
     t.integer "activity_code"
     t.string "name"
-    t.string "type"
+    t.string "activity_type"
     t.float "percent_complete"
     t.integer "subcontractor_id"
     t.integer "location_id"
@@ -53,7 +53,8 @@ ActiveRecord::Schema[7.0].define(version: 2022_12_13_152509) do
     t.float "spent_to_date"
     t.float "quantity_to_date"
     t.float "manhours_to_date"
-    t.string "cost_category"
+    t.string "cost_category_1"
+    t.string "cost_category_2"
   end
 
   create_table "locations", force: :cascade do |t|
