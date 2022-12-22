@@ -57,7 +57,7 @@ s23 = Subcontractor.create(name: 'Weir')
 s24 = Subcontractor.create(name: 'Welkin')
 
 
-cost_excel_file = Roo::Spreadsheet.open('upload_files\Cost Codes 2022-12-13 - Full Cost Schedule.xlsx')
+cost_excel_file = Roo::Spreadsheet.open('upload_files/Cost Codes 2022-12-13 - Full Cost Schedule.xlsx')
 cost_data = cost_excel_file.sheet(0)
 
 cost_data.each_with_index do |row, index|
@@ -95,7 +95,7 @@ end
 
 puts 'next upload'
 
-activities_excel_file = Roo::Spreadsheet.open('upload_files\November 2022 Schedule - Data.xlsx')
+activities_excel_file = Roo::Spreadsheet.open('upload_files/November 2022 Schedule - Data.xlsx')
 activities_data = activities_excel_file.sheet(0)
 
 activities_data.each_with_index do |row, index|
