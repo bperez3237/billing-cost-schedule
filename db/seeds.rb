@@ -101,18 +101,18 @@ activities_data = activities_excel_file.sheet(0)
 activities_data.each_with_index do |row, index|
     next if index == 0
     Activity.create(
-        activity_code: row[0],
-        name: row[1],
-        activity_type: row[2],
-        percent_complete: row[3],
-        subcontractor_id: row[4],
+        activity_code: row[7],
+        name: row[11],
+        activity_type: row[8],
+        percent_complete: row[14],
+        subcontractor_id: Subcontractor.find_by(name: row[18]) ? Subcontractor.find_by(name: row[18]).id : nil,
         location_id:  Location.find_by(name: row[2]) ? Location.find_by(name: row[2]).id : nil,
         cost_id: Cost.find_by(cost_code: row[21]) ? Cost.find_by(cost_code: row[21]).id : nil,
         start_date: row[15],
         end_date: row[16],
         category_1: row[19],
         category_2: row[20],
-        completed: row[0]=='Completed' ? true : false,
+        completed: row[0]=='Completed' ? true : false
     )
 end
 

@@ -3,15 +3,21 @@ import './App.css';
 // import {BrowserRouter} from 'react-router-dom';
 // import {Switch, Route} from 'react-router-dom';
 import useFetch from './hooks/useFetch';
+import {useState} from 'react';
 
 function App() {
-  const {data} = useFetch('/subcontractors')
-  console.log(data)
-
+  const [selected, setSelected] = useState('/subcontractors')
+  const {data} = useFetch(selected)
 
   return (
     <div className="App">
-      {/* <p>{data.map((element)=><p>{element.id}</p>)}</p> */}
+      <div className='select'>
+        <h1 onClick={(e)=>setSelected('/subcontractors')}>Subcontractors</h1>
+        <h1 onClick={(e)=>setSelected('/activities')}>Activities</h1>
+        <h1 onClick={(e)=>setSelected('/locations')}>Locations</h1>
+        <h1 onClick={(e)=>setSelected('/costs')}>Costs</h1>
+      </div>
+      <div>{data.map((element)=><p key={element.id}>{element.name}</p>)}</div>
     </div>
   );
 }
