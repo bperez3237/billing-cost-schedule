@@ -8,6 +8,7 @@ import {useState} from 'react';
 function App() {
   const [selected, setSelected] = useState('/subcontractors')
   const {data} = useFetch(selected)
+  console.log(data)
 
   return (
     <div className="App">
